@@ -96,7 +96,7 @@
             </div>
         </section>
           <!-- About -->
-        <section class="p-5 ms-lg-5" id="about">
+        <section class="px-md-5 py-5 ms-lg-5 px-1" id="about">
             <div class="container-fluid" data-aos="fade-up">
                 <div class="about text-center mb-4">
                     <h1 class="mb-4 fw-bold">ABOUT</h1>
@@ -130,7 +130,7 @@
             </div>
         </section>
           <!-- facts -->
-        <section class="p-5 ms-lg-5">
+        <section class="px-md-5 py-5 ms-lg-5 px-1">
             <div class="container-fluid" data-aos="fade-left">
                 <div class="about text-center mb-5">
                     <h1 class="mb-4 fw-bold">FACTS</h1>
@@ -162,7 +162,7 @@
             </div>
         </section>
           <!-- Skills -->
-        <section class="p-5 ms-lg-5">
+        <section class="px-md-5 py-5 ms-lg-5 px-1">
             <div class="container-fluid" data-aos="zoom-in">
                 <div class="about text-center mb-5">
                     <h1 class="mb-4 fw-bold">SKILLS</h1>
@@ -232,8 +232,8 @@
             </div>
         </section>
           <!-- Resume -->
-        <section class="p-5 ms-lg-5" id="resume">
-            <div class="container-lg" data-aos="zoom-in-up">
+        <section class="px-md-5 py-5 ms-lg-5 px-1" id="resume">
+            <div class="container-lg" data-aos="zoom-out-up">
                 <div class="about text-center mb-5">
                     <h1 class="mb-4 fw-bold">RESUME</h1>
                     <div class="horizontal mx-auto mb-4"></div>
@@ -300,8 +300,8 @@
             </div>
         </section>
         <!-- Portfolio -->
-        <section class="p-5 ms-lg-5" id="portfolio">
-            <div class="container-lg" data-aos="flip-up">
+        <section class="px-md-5 py-5 ms-lg-5 px-1" id="portfolio">
+            <div class="container-lg" data-aos="fade-up">
                 <div class="about text-center mb-5">
                     <h1 class="mb-4 fw-bold">PORTFOLIO</h1>
                     <div class="horizontal mx-auto mb-4"></div>
@@ -349,7 +349,7 @@
                                     <div class="col mb-3">
                                         <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain h-100"><img src="https://kenh14cdn.com/203336854389633024/2023/1/4/photo-6-1672803787646671422206.jpeg" alt="" class="img-fluid h-100 object-fit-cover rounded-2"></div>
                                     </div>
-                                    <div class="col mb-3 d-none d-lg-block d-xl-none">
+                                    <div class="col mb-3 d-block d-md-none d-lg-block d-xl-none">
                                         <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain h-100"><img src="https://static-images.vnncdn.net/files/publish/2023/2/25/87984313-2586145001666491-2985760121994346496-n-1217.jpeg" alt="" class="img-fluid h-100 object-fit-cover rounded-2"></div>
                                     </div>
                                 </div>
@@ -394,7 +394,7 @@
             </div>
         </section>
         <!-- Services -->
-        <section class="p-5 ms-lg-5" id="services">
+        <section class="px-md-5 py-5 ms-lg-5 px-1" id="services">
             <div class="container-lg" data-aos="fade-up-right">
                 <div class="about text-center mb-5">
                     <h1 class="mb-4 fw-bold">SERVICES</h1>
@@ -490,7 +490,7 @@
             </div>
         </section>
         <!-- Testimonials -->
-        <section class="p-5 ms-lg-5">
+        <section class="px-md-5 py-5 ms-lg-5 px-1">
             <div class="container-lg" data-aos="zoom-in-left">
                 <div class="about text-center mb-5">
                     <h1 class="mb-4 fw-bold">TESTIMONIALS</h1>
@@ -582,7 +582,7 @@
             </div>
         </section>
         <!-- Contact -->
-        <section class="p-5 ms-lg-5" id="contact">
+        <section class="px-md-5 py-5 ms-lg-5 px-1" id="contact">
             <div class="container-lg" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
                 <div class="container-lg">
                     <div class="about text-center mb-5">
@@ -639,7 +639,7 @@
             </div>
         </section>
         <!-- information -->
-        <footer class="ps-5 pt-5 bg-body-secondary">
+        <footer class="px-5 pt-5 bg-body-secondary">
             <div class="container-fluid text-center" data-aos="flip-down" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
                 <h1 class="mb-4 fw-bold">Tú Hồng Lê</h1>
                 <p class="fst-italic small">Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
@@ -736,7 +736,13 @@
     <!-- INITIALIZE AOS - Fade in elements into viewport -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init();
+        AOS.init({
+            offset: 200,
+            duration: 600,
+            easing: 'ease-in-sine',
+            delay: 100,
+            once: true,
+        });
     </script>
 
     <!-- Bootstrap 5 JS here -->
