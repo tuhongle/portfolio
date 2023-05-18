@@ -1,0 +1,295 @@
+:root {
+    --url1: "https://www.rollingstone.com/wp-content/uploads/2022/06/NY_5-2Clean.jpg?w=1581&h=1054&crop=1";
+    --url2: "https://media.vov.vn/sites/default/files/styles/large/public/2022-05/hd-wallpaper-nayeon-twice-nayeon-twice-alcohol-kpop-im-nayeon-twice-taste-of-love-twice-alcohol-taste-of-love.jpeg.jpg";
+    --url3: "https://wallpapers.com/images/hd/twice-nayeon-wearing-a-tiara-0jkrktwrq99l3shv.jpg";
+    --url4: "https://image.vtc.vn/files/bichdung/2018/11/24/dich-le-nhiet-ba-3-3-1514547.jpg";
+    --url5: "https://ttol.vietnamnetjsc.vn/images/2019/09/19/10/56/Dich-Le-Nhiet-Ba-6.jpg";
+    --url6: "https://cdn.24h.com.vn/upload/4-2021/images/2021-12-24/dich-Le-Nhiet-Ba-mac-dep-nhat-2021-voi-phuc-trang-khoe-triet-de-voc-dang-nu-than-006qht3ely1gvf2hn0clpj647s5j77wl02-1640314675-826-width1000height1313.jpg";
+    --url7: "https://economictimes.indiatimes.com/thumb/msid-96710895,width-1200,height-900,resizemode-4,imgsize-38032/blackpink-jisoo.jpg?from=mdr";
+    --url8: "https://kenh14cdn.com/203336854389633024/2023/1/4/photo-6-1672803787646671422206.jpeg";
+    --url9: "https://static-images.vnncdn.net/files/publish/2023/2/25/87984313-2586145001666491-2985760121994346496-n-1217.jpeg";
+}
+
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important ;
+}
+
+#closeOffCanvas {
+    top: 1%;
+    left: 93%;
+    display: none;
+}
+
+#closeOffCanvas:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-nav a.nav-link.active button {
+    background-color: #0563BB !important;
+}
+
+.navbar-nav a.nav-link.active i {
+    color: white;
+}
+
+.offcanvas.offcanvas-start {
+    width: 300px !important;
+}
+
+.btn-1:hover {
+    transition: all 0.15s linear;
+    color: white !important;
+    background-color: #0563BB !important;
+}
+
+.home > .container-fluid {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("./img/HTU_0222.JPG");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.iconInfo a i.fa-brands:hover {
+    transform: scale(1.1);
+    color: #0563BB;
+    transition: all 0.15s linear;
+}
+
+.horizontal {
+    position: relative;
+    background-color: #0563BB;
+    height: 4px;
+    width: 5vw;
+}
+
+.horizontal::before,
+.horizontal::after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 5vw;
+    background-color: #DDDDDD;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.horizontal::before {
+    left: -100%;
+}
+
+.horizontal::after {
+    right: -100%;
+}
+
+.factIcons {
+    background-color: #0563BB !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    line-height: 15px !important;
+}
+
+div.resume-body::before {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: white;
+    border: 2px solid #0563BB;
+    left: 0;
+    transform: translateX(-50%);
+}
+
+#portfolioTab button.nav-link:hover {
+    transform: scale(1.1);
+    color: #0563BB !important;
+    transition: all 0.15s linear;
+}
+
+#portfolioTabContent div.img-contain {
+    position: relative !important;
+}
+
+#portfolioTabContent div.img-contain:hover img {
+    box-shadow: 0 0 10px 5px rgba(128, 128, 128, 0.25);
+}
+
+#portfolioTabContent div.img-contain:hover::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.75);
+    transition: all 0.3s linear;
+}
+
+#portfolioTabContent div.img-contain:hover::after {
+    content: "\2b";
+    position: absolute;
+    font: var(--fa-font-solid);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:rgba(128, 128, 128, 0.5);
+    font-size: 100px;
+}
+
+.card.rounded-3:hover {
+    box-shadow: 0 0 30px 5px rgba(128, 128, 128, 0.25);
+}
+
+.card-1 i.bi.bi-dribbble {
+    color: #47aeff !important;
+}
+
+.card-1:hover i.bi.bi-dribbble {
+    color: white !important;
+}
+
+.card-1:hover path {
+    fill: #47aeff !important;
+}
+
+.card-2 i {
+    color: #ffa76e !important;
+}
+
+.card-2:hover i {
+    color: white !important;
+}
+
+.card-2:hover path {
+    fill: #ffa76e !important;
+}
+
+.card-3 i {
+    color: #e80368 !important;
+}
+
+.card-3:hover i {
+    color: white !important;
+}
+
+.card-3:hover path {
+    fill: #e80368 !important;
+}
+
+.card-4 i {
+    color: #ffbb2c !important;
+}
+
+.card-4:hover i {
+    color: white !important;
+}
+
+.card-4:hover path {
+    fill: #ffbb2c !important;
+}
+
+.card-5 i {
+    color: #ff5828 !important;
+}
+
+.card-5:hover i {
+    color: white !important;
+}
+
+.card-5:hover path {
+    fill: #ff5828 !important;
+}
+
+.card-6 i {
+    color: #11dbcf !important;
+}
+
+.card-6:hover i {
+    color: white !important;
+}
+
+.card-6:hover path {
+    fill: #11dbcf !important;
+}
+
+.carousel .carousel-indicators {
+    top: 100%;
+}
+
+.carousel .carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #0563BB;
+}
+
+.carousel .carousel-indicators li.active {
+    background-color: #0563BB;
+}
+
+div.contact-icon {
+    float: left;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
+    background-color: #EEF7FF !important;
+    transition: all 0.3s linear;
+}
+
+div.contact-icon:hover {
+    background-color: #0563BB !important;
+}
+
+div.contact-icon:hover i {
+    color: white !important;
+}
+
+div.contact-text {
+    padding: 0 0 0 70px;
+}
+
+#contactForm input::placeholder,
+#contactForm textarea::placeholder {
+    color: #728394 !important;
+}
+
+.footerIcons button {
+    border-radius: 50%;
+    width: 30px !important;
+    height: 30px !important;
+}
+
+/* Modal CSS */
+
+#carouselModal .carousel-item img {
+    height: 75vh !important;
+    object-fit: contain;
+}
+
+/* Media CSS style */
+
+@media only screen and (min-width: 992px) {
+    button.btn-1 {
+        height: 50px !important;
+        width: 50px !important;
+    }
+    button.btn-1:hover > .nav-link-text {
+        transition: all 0.05s linear;
+        display: inline-block !important;
+    }
+    button.btn-1:hover {
+        transition: all 0.15s linear;
+        width: 120px !important;
+        justify-content: start !important;
+        gap: 10px;
+        padding-left: 20px !important;
+    }
+   ul.navbar-nav {
+        transform: translateY(50%);
+        margin: 0 !important;
+        padding: 0 !important;
+   }
+   .homeInfo {
+        margin-left: 175px;
+   }
+}

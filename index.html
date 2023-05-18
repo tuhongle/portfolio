@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 Exercise 3</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> <!-- Fade elements into viewport -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light z-1 p-0" id="navbarOffCanvas">
+        <div class="container-fluid position-absolute top-0">
+            <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <button id="closeOffCanvas" type="button" class="btn ms-auto navbar-toggle position-absolute fix" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+              <i class="bi bi-x-circle-fill text-primary display-6"></i>
+            </button>
+            <div class="offcanvas offcanvas-start position-fixed" data-bs-backdrop="false" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-body d-flex">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 flex-lg-column">
+                        <li class="nav-item">
+                            <a class="nav-link ms-lg-2" role="button" aria-current="page" href="#home">
+                                <button class="w-100 btn bg-secondary-subtle btn-1 rounded-pill text-start ps-4 py-3 p-lg-2 d-flex align-items-center justify-content-lg-center">
+                                    <i class="bi bi-house-door pe-2 p-lg-0"></i>
+                                    <small class="d-inline-block d-lg-none nav-link-text">Home</small>
+                                </button>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ms-lg-2" role="button" aria-current="page" href="#about">
+                                <button class="btn bg-secondary-subtle btn-1 rounded-pill text-start ps-4 py-3 p-lg-2 w-100 d-flex align-items-center justify-content-lg-center border-0">
+                                    <i class="bi bi-person pe-2 p-lg-0"></i>
+                                    <small class="d-inline-block d-lg-none nav-link-text">About</small>
+                                </button>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ms-lg-2" role="button" aria-current="page" href="#resume">
+                                <button class="btn bg-secondary-subtle btn-1 rounded-pill text-start ps-4 py-3 p-lg-2 d-flex align-items-center justify-content-lg-center w-100">
+                                    <i class="bi bi-file-earmark pe-2 p-lg-0"></i>
+                                    <small class="d-inline-block d-lg-none nav-link-text">Resume</small>
+                                </button>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ms-lg-2" role="button" aria-current="page" href="#portfolio">
+                                <button class="btn bg-secondary-subtle btn-1 rounded-pill text-start ps-4 py-3 p-lg-2 d-flex align-items-center justify-content-lg-center w-100">
+                                    <i class="bi bi-file-text pe-2 p-lg-0"></i>
+                                    <small class="d-inline-block d-lg-none nav-link-text">Portfolio</small>
+                                </button>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ms-lg-2" role="button" aria-current="page" href="#services">
+                                <button class="btn bg-secondary-subtle btn-1 rounded-pill text-start ps-4 py-3 p-lg-2 d-flex align-items-center justify-content-lg-center w-100">
+                                    <i class="bi bi-sd-card pe-2 p-lg-0"></i>
+                                    <small class="d-inline-block d-lg-none nav-link-text">Services</small>
+                                </button>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link ms-lg-2" role="button" aria-current="page" href="#contact">
+                                <button class="btn bg-secondary-subtle btn-1 rounded-pill text-start ps-4 py-3 p-lg-2 d-flex align-items-center justify-content-lg-center w-100">
+                                    <i class="bi bi-envelope pe-2 p-lg-0"></i>
+                                    <small class="d-inline-block d-lg-none nav-link-text">Contact</small>
+                                </button>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main data-bs-spy="scroll" data-bs-target="#navbarOffCanvas" data-bs-offset="50" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="position-relative bg-body-tertiary m-0 p-0 text-center" tabindex="0">
+          <!-- jumbotron Home -->
+        <section class="home" id="home">
+              <div class="container-fluid p-0 vh-100 vw-100 d-flex justify-content-center align-items-center justify-content-lg-start">
+                <div class="homeInfo text-center text-lg-start text-dark-emphasis">
+                    <h2 class="display-1 fw-bold">Tú Hồng Lê</h2>
+                    <p class="display-5 pt-3">I'm <span id="typed" class="text-primary"></span></p>
+                    <div class="iconInfo pt-4 d-flex gap-5 justify-content-between h4">
+                        <a href="" class="text-dark-emphasis"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="" class="text-dark-emphasis"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="" class="text-dark-emphasis"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="" class="text-dark-emphasis"><i class="fa-brands fa-skype"></i></a>
+                        <a href="" class="text-dark-emphasis"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+          <!-- About -->
+        <section class="p-5 ms-lg-5" id="about">
+            <div class="container-fluid" data-aos="fade-up">
+                <div class="about text-center mb-4">
+                    <h1 class="mb-4 fw-bold">ABOUT</h1>
+                    <div class="horizontal mx-auto mb-4"></div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem quod cum suscipit labore omnis molestiae, ipsa ex aliquam quo totam quisquam. Impedit aut fugit modi quisquam repudiandae temporibus voluptas iste hic voluptatum, quis dolores dolorum iure, nihil ducimus deleniti officia voluptatibus perspiciatis optio nesciunt nostrum voluptate, eum ex. Minima, voluptatibus!</p>
+                </div>
+                <div class="row g-5">
+                    <div class="col-lg-5 text-center">
+                        <img src="./img/Tre 21446.jpg" alt="logo" class="img-fluid">
+                    </div>
+                    <div class="col-lg-7">
+                        <h2>UI/UX Designer & Web Developer.</h2>
+                        <p class="lead fst-italic">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus velit modi, ullam et ea ducimus hic quia consequuntur pariatur neque.</p>
+                        <div class="row">
+                            <div class="col-lg-6 fs-6">
+                                <p><i class="fa-solid fa-angle-right text-primary"></i>  <b>Birthday:</b>  1 Oct 1990</p>
+                                <p><i class="fa-solid fa-angle-right text-primary"></i>  <b>Website:</b>  www.facebook.com/tuhongle</p>
+                                <p><i class="fa-solid fa-angle-right text-primary"></i>  <b>Phone:</b>  +84 905 68 2565</p>
+                                <p><i class="fa-solid fa-angle-right text-primary"></i>  <b>City:</b>  Ho Chi Minh, Vietnam</p>
+                            </div>
+                            <div class="col-lg-6 fs-6">
+                                <p><i class="fa-solid fa-angle-right text-primary"></i>  <b>Age:</b>  33</p>
+                                <p><i class="fa-solid fa-angle-right text-primary"></i>  <b>Degree:</b>  Master</p>
+                                <p><i class="fa-solid fa-angle-right text-primary"></i>  <b>Email:</b>  hongtufiroct@gmail.com</p>
+                                <p><i class="fa-solid fa-angle-right text-primary"></i>  <b>Freelance:</b>  Available</p>
+                            </div>
+                        </div>
+                        <p class="fs-5 fw-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ratione repudiandae aperiam non earum, quod ad facere repellat reiciendis magni consequuntur sequi. Esse ratione iste quia dignissimos, ducimus laudantium, labore aut alias commodi unde quaerat deserunt atque rem. At laboriosam nisi quisquam quaerat rerum! Soluta quisquam fugit labore aliquam autem!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+          <!-- facts -->
+        <section class="p-5 ms-lg-5">
+            <div class="container-fluid" data-aos="fade-left">
+                <div class="about text-center mb-5">
+                    <h1 class="mb-4 fw-bold">FACTS</h1>
+                    <div class="horizontal mx-auto mb-4"></div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem quod cum suscipit labore omnis molestiae, ipsa ex aliquam quo totam quisquam. Impedit aut fugit modi quisquam repudiandae temporibus voluptas iste hic voluptatum, quis dolores dolorum iure, nihil ducimus deleniti officia voluptatibus perspiciatis optio nesciunt nostrum voluptate, eum ex. Minima, voluptatibus!</p>
+                </div>
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-3 text-center">
+                        <div class="factIcons d-flex align-items-center justify-content-center mx-auto mb-3"><i class="d-block bi bi-emoji-smile text-light fs-2"></i></div>
+                        <h2>232</h2>
+                        <p class="fw-light">Happy Clients</p>
+                    </div>
+                    <div class="col-md-6 col-lg-3 text-center">
+                        <div class="factIcons d-flex align-items-center justify-content-center mx-auto mb-3"><i class="bi bi-journal-album text-light fs-2"></i></div>
+                        <h2>521</h2>
+                        <p class="fw-light">Projects</p>
+                    </div>
+                    <div class="col-md-6 col-lg-3 text-center">
+                        <div class="factIcons d-flex align-items-center justify-content-center mx-auto mb-3"><i class="d-block bi bi-headset text-light fs-2"></i></div>
+                        <h2>1463</h2>
+                        <p class="fw-light">Hours Of Support</p>
+                    </div>
+                    <div class="col-md-6 col-lg-3 text-center">
+                        <div class="factIcons d-flex align-items-center justify-content-center mx-auto mb-3"><i class="d-block bi bi-award text-light fs-2"></i></div>
+                        <h2>25</h2>
+                        <p class="fw-light">Awards</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+          <!-- Skills -->
+        <section class="p-5 ms-lg-5">
+            <div class="container-fluid" data-aos="zoom-in">
+                <div class="about text-center mb-5">
+                    <h1 class="mb-4 fw-bold">SKILLS</h1>
+                    <div class="horizontal mx-auto mb-4"></div>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, porro. Ab perspiciatis architecto reiciendis voluptate sapiente provident aperiam, quibusdam sunt et officia recusandae totam ducimus qui fugiat accusantium perferendis officiis quod ipsum labore placeat? Expedita nihil sapiente deleniti voluptas ipsam.</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="mb-4">
+                            <div class="skill-header fw-bold mb-3 d-flex justify-content-between">
+                                <small><span class="d-inline-block">HTML</span></small>
+                                <small><span class="d-inline-block">100%</span></small>
+                            </div>
+                            <div class="progress rounded-0" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar" style="width: 100%"></div>
+                              </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="skill-header fw-bold mb-3 d-flex justify-content-between">
+                                <small><span class="d-inline-block">CSS</span></small>
+                                <small><span class="d-inline-block">90%</span></small>
+                            </div>
+                            <div class="progress rounded-0" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar" style="width: 90%"></div>
+                              </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="skill-header fw-bold mb-3 d-flex justify-content-between">
+                                <small><span class="d-inline-block">JAVASCRIPT</span></small>
+                                <small><span class="d-inline-block">75%</span></small>
+                            </div>
+                            <div class="progress rounded-0" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar" style="width: 75%"></div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="mb-4">
+                            <div class="skill-header fw-bold mb-3 d-flex justify-content-between">
+                                <small><span class="d-inline-block">PHP</span></small>
+                                <small><span class="d-inline-block">80%</span></small>
+                            </div>
+                            <div class="progress rounded-0" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar" style="width: 80%"></div>
+                              </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="skill-header fw-bold mb-3 d-flex justify-content-between">
+                                <small><span class="d-inline-block">WORDPRESS/CMS</span></small>
+                                <small><span class="d-inline-block">90%</span></small>
+                            </div>
+                            <div class="progress rounded-0" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar" style="width: 90%"></div>
+                              </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="skill-header fw-bold mb-3 d-flex justify-content-between">
+                                <small><span class="d-inline-block">PHOTOSHOP</span></small>
+                                <small><span class="d-inline-block">85%</span></small>
+                            </div>
+                            <div class="progress rounded-0" role="progressbar" aria-label="Basic example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar" style="width: 85%"></div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+          <!-- Resume -->
+        <section class="p-5 ms-lg-5" id="resume">
+            <div class="container-lg" data-aos="zoom-in-up">
+                <div class="about text-center mb-5">
+                    <h1 class="mb-4 fw-bold">RESUME</h1>
+                    <div class="horizontal mx-auto mb-4"></div>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, porro. Ab perspiciatis architecto reiciendis voluptate sapiente provident aperiam, quibusdam sunt et officia recusandae totam ducimus qui fugiat accusantium perferendis officiis quod ipsum labore placeat? Expedita nihil sapiente deleniti voluptas ipsam.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <h3 class="resume-header text-dark my-4">Summary</h3>
+                        <div class="resume-body ps-4 border-start border-primary border-2 position-relative">
+                            <h5 class="fw-medium text-primary">LÊ HỒNG TÚ</h5>
+                            <p class="fst-italic">Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</p>
+                            <div class="resume-content pb-3">
+                                <ul class="d-flex flex-column gap-3 align-items-start lead small">
+                                    <li>1248/30/7 Huynh Tan Phat, Tan Phu ward, District 7, HCM</li>
+                                    <li>090 568 2565</li>
+                                    <li>hongtufiroct@gmail.com</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h3 class="resume-header text-dark my-4">Education</h3>
+                        <div class="resume-body ps-4 border-start border-primary border-2 m-0 py-0 position-relative">
+                            <h5 class="fw-medium text-primary mb-3">MASTER OF FINE ARTS & GRAPHIC DESIGN</h5>
+                            <span class="bg-secondary-subtle py-1 px-3 fw-bold rounded">2015-2016</span>
+                            <p class="fst-italic mt-3">Rochester Institute of Technology, Rochester, NY</p>
+                            <p class="lead mb-0 pb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam sed repudiandae placeat facilis, vero, assumenda rem aliquid voluptatem nemo eligendi mollitia, maxime at minima cum?</p>
+                        </div>
+                        <div class="resume-body ps-4 border-start border-primary border-2 m-0 py-0 position-relative">
+                            <h5 class="fw-medium text-primary mb-3">BACHELOR OF FINE ARTS & GRAPHIC DESIGN</h5>
+                            <span class="bg-secondary-subtle py-1 px-3 fw-bold rounded">2010 - 2014</span>
+                            <p class="fst-italic mt-3">Rochester Institute of Technology, Rochester, NY</p>
+                            <p class="lead mb-0 pb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam sed repudiandae placeat facilis, vero, assumenda rem aliquid voluptatem nemo eligendi mollitia, maxime at minima cum?</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h3 class="resume-header text-dark my-4">Professional Experience</h3>
+                        <div class="resume-body ps-4 border-start border-primary border-2 m-0 py-0 position-relative">
+                            <h5 class="fw-medium text-primary mb-3">SENIOR GRAPHIC DESIGN SPECIALIST</h5>
+                            <span class="bg-secondary-subtle py-1 px-3 fw-bold rounded">2019 - Present</span>
+                            <p class="fst-italic mt-3">Experion, New York, NY</p>
+                            <div class="resume-content pb-3">
+                                <ul class="d-flex flex-column gap-3 align-items-start lead">
+                                    <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
+                                    <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project.</li>
+                                    <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
+                                    <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="resume-body ps-4 border-start border-primary border-2 m-0 py-0 position-relative">
+                            <h5 class="fw-medium text-primary mb-3">GRAPHIC DESIGN SPECIALIST</h5>
+                            <span class="bg-secondary-subtle py-1 px-3 fw-bold rounded">2017 - 2018</span>
+                            <p class="fst-italic mt-3">Stepping Stone Advertising, New York, NY</p>
+                            <div class="resume-content pb-3">
+                                <ul class="d-flex flex-column gap-3 align-items-start lead">
+                                    <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
+                                    <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
+                                    <li>Recommended and consulted with clients on the most appropriate graphic design</li>
+                                    <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio -->
+        <section class="p-5 ms-lg-5" id="portfolio">
+            <div class="container-lg" data-aos="flip-up">
+                <div class="about text-center mb-5">
+                    <h1 class="mb-4 fw-bold">PORTFOLIO</h1>
+                    <div class="horizontal mx-auto mb-4"></div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque nesciunt, ex ut quas corrupti sint dolore, veritatis quibusdam amet assumenda minima earum delectus facere tempore fuga impedit iste quidem. Eveniet.</p>
+                </div>
+                <div class="row">
+                    <ul class="nav d-flex justify-content-center mb-3" id="portfolioTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link text-dark-emphasis fw-medium active" id="all-tab" data-bs-toggle="tab" data-bs-target="#tab-all" type="button" role="tab" aria-controls="tab-all" aria-selected="true">ALL</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link text-dark-emphasis fw-medium" id="app-tab" data-bs-toggle="tab" data-bs-target="#tab-app" type="button" role="tab" aria-controls="tab-app" aria-selected="false">APP</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link text-dark-emphasis fw-medium" id="card-tab" data-bs-toggle="tab" data-bs-target="#tab-card" type="button" role="tab" aria-controls="tab-card" aria-selected="false">CARD</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link text-dark-emphasis fw-medium" id="web-tab" data-bs-toggle="tab" data-bs-target="#tab-web" type="button" role="tab" aria-controls="tab-web" aria-selected="false">WEB</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="portfolioTabContent">
+                        <div class="tab-pane fade show active" id="tab-all" role="tabpanel" aria-labelledby="tab-all-tab">
+                                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
+                                    <div class="col mb-3">
+                                        <div class="img-contain h-100" type="button" data-bs-toggle="modal" data-bs-target="#carouselImage"><img src="https://www.rollingstone.com/wp-content/uploads/2022/06/NY_5-2Clean.jpg?w=1581&h=1054&crop=1" alt="" class="img-fluid h-100 object-fit-cover rounded-4"></div>
+                                    </div>
+                                    <div class="col mb-3">
+                                        <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain h-100"><img src="https://media.vov.vn/sites/default/files/styles/large/public/2022-05/hd-wallpaper-nayeon-twice-nayeon-twice-alcohol-kpop-im-nayeon-twice-taste-of-love-twice-alcohol-taste-of-love.jpeg.jpg" alt="" class="img-fluid h-100 object-fit-cover rounded-2"></div>
+                                    </div>
+                                    <div class="col mb-3">
+                                        <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain h-100"><img src="https://wallpapers.com/images/hd/twice-nayeon-wearing-a-tiara-0jkrktwrq99l3shv.jpg" alt="" class="img-fluid h-100 object-fit-cover rounded-2"></div>
+                                    </div>
+                                    <div class="col mb-3">
+                                        <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain h-100"><img src="https://image.vtc.vn/files/bichdung/2018/11/24/dich-le-nhiet-ba-3-3-1514547.jpg" alt="" class="img-fluid h-100 object-fit-cover rounded-2"></div>
+                                    </div>
+                                    <div class="col mb-3">
+                                        <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain h-100"><img src="https://ttol.vietnamnetjsc.vn/images/2019/09/19/10/56/Dich-Le-Nhiet-Ba-6.jpg" alt="" class="img-fluid h-100 object-fit-cover rounded-2"></div>
+                                    </div>
+                                    <div class="col mb-3">
+                                        <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain h-100"><img src="https://cdn.24h.com.vn/upload/4-2021/images/2021-12-24/dich-Le-Nhiet-Ba-mac-dep-nhat-2021-voi-phuc-trang-khoe-triet-de-voc-dang-nu-than-006qht3ely1gvf2hn0clpj647s5j77wl02-1640314675-826-width1000height1313.jpg" alt="" class="img-fluid h-100 object-fit-cover rounded-2"></div>
+                                    </div>
+                                    <div class="col mb-3">
+                                        <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain h-100"><img src="https://economictimes.indiatimes.com/thumb/msid-96710895,width-1200,height-900,resizemode-4,imgsize-38032/blackpink-jisoo.jpg?from=mdr" alt="" class="img-fluid h-100 object-fit-cover rounded-2"></div>
+                                    </div>
+                                    <div class="col mb-3">
+                                        <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain h-100"><img src="https://kenh14cdn.com/203336854389633024/2023/1/4/photo-6-1672803787646671422206.jpeg" alt="" class="img-fluid h-100 object-fit-cover rounded-2"></div>
+                                    </div>
+                                    <div class="col mb-3 d-none d-lg-block d-xl-none">
+                                        <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain h-100"><img src="https://static-images.vnncdn.net/files/publish/2023/2/25/87984313-2586145001666491-2985760121994346496-n-1217.jpeg" alt="" class="img-fluid h-100 object-fit-cover rounded-2"></div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-app" role="tabpanel" aria-labelledby="tab-app-tab">
+                                <div class="row g-3">
+                                    <div class="col-md-6 gap-3">
+                                        <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain"><img src="https://www.rollingstone.com/wp-content/uploads/2022/06/NY_5-2Clean.jpg?w=1581&h=1054&crop=1" alt="" class="img-fluid mb-3"></div>
+                                        <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain"><img src="https://media.vov.vn/sites/default/files/styles/large/public/2022-05/hd-wallpaper-nayeon-twice-nayeon-twice-alcohol-kpop-im-nayeon-twice-taste-of-love-twice-alcohol-taste-of-love.jpeg.jpg" alt="" class="img-fluid"></div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain"><img src="https://wallpapers.com/images/hd/twice-nayeon-wearing-a-tiara-0jkrktwrq99l3shv.jpg" alt="" class="img-fluid"></div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-card" role="tabpanel" aria-labelledby="tab-card-tab">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain"><img src="https://image.vtc.vn/files/bichdung/2018/11/24/dich-le-nhiet-ba-3-3-1514547.jpg" alt="" class="img-fluid"></div>
+                                    </div>
+                                    <div class="col-md-6 gap-3">
+                                        <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain"><img src="https://ttol.vietnamnetjsc.vn/images/2019/09/19/10/56/Dich-Le-Nhiet-Ba-6.jpg" alt="" class="img-fluid mb-3"></div>
+                                        <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain"><img src="https://cdn.24h.com.vn/upload/4-2021/images/2021-12-24/dich-Le-Nhiet-Ba-mac-dep-nhat-2021-voi-phuc-trang-khoe-triet-de-voc-dang-nu-than-006qht3ely1gvf2hn0clpj647s5j77wl02-1640314675-826-width1000height1313.jpg" alt="" class="img-fluid"></div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab-web" role="tabpanel" aria-labelledby="tab-web-tab">
+                                <div class="row g-3">
+                                    <div class="col-md-6 col-lg-4">
+                                        <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain"><img src="https://economictimes.indiatimes.com/thumb/msid-96710895,width-1200,height-900,resizemode-4,imgsize-38032/blackpink-jisoo.jpg?from=mdr" alt="" class="img-fluid"></div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4">
+                                        <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain"><img src="https://kenh14cdn.com/203336854389633024/2023/1/4/photo-6-1672803787646671422206.jpeg" alt="" class="img-fluid"></div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4">
+                                        <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain"><img src="https://static-images.vnncdn.net/files/publish/2023/2/25/87984313-2586145001666491-2985760121994346496-n-1217.jpeg" alt="" class="img-fluid"></div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services -->
+        <section class="p-5 ms-lg-5" id="services">
+            <div class="container-lg" data-aos="fade-up-right">
+                <div class="about text-center mb-5">
+                    <h1 class="mb-4 fw-bold">SERVICES</h1>
+                    <div class="horizontal mx-auto mb-4"></div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque nesciunt, ex ut quas corrupti sint dolore, veritatis quibusdam amet assumenda minima earum delectus facere tempore fuga impedit iste quidem. Eveniet.</p>
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card rounded-3 h-100 text-center border-0 pt-5 pb-3 card-1">
+                            <div class="card-body d-flex flex-column gap-3">
+                                <div class="card-icon mb-3 position-relative d-flex align-items-center justify-content-center">
+                                    <svg width="100" height="100" viewBox="-50 -50 100 100" preserveAspectRatio="none" class="p-0">
+                                        <path fill="#F5F5F5" d="M22,-32.6C27.3,-30.9,29.3,-22.6,32.4,-15C35.6,-7.4,39.9,-0.5,40.8,7.2C41.7,14.9,39.3,23.4,34,29.3C28.7,35.3,20.5,38.6,12.3,40.3C4.1,42,-4.1,41.9,-10.3,38.5C-16.6,35.1,-20.8,28.5,-26.5,22.6C-32.1,16.7,-39.1,11.7,-41.7,4.9C-44.4,-1.8,-42.7,-10.3,-37.1,-14.6C-31.5,-19,-22,-19.2,-15.2,-20.1C-8.3,-21,-4.2,-22.6,2.1,-25.9C8.4,-29.2,16.8,-34.2,22,-32.6Z" width="100%" height="100%" stroke="0" transform="scale(1.1, 1.2)"></path>
+                                    </svg>
+                                    <i class="bi bi-dribbble fs-1 d-inline-block position-absolute top-50 translate-middle-y"></i>
+                                </div>
+                                <h3 class="card-title">Lorem Ipsum</h3>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero reprehenderit recusandae aperiam qui rem distinctio!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card rounded-3 h-100 text-center border-0 pt-5 pb-3 card-2">
+                            <div class="card-body d-flex flex-column gap-3">
+                                <div class="card-icon mb-3 position-relative d-flex align-items-center justify-content-center">
+                                    <svg width="100" height="100" viewBox="-50 -50 100 100" preserveAspectRatio="none" class="p-0">
+                                        <path fill="#F5F5F5" d="M26.9,-33.2C33.7,-26.4,37.1,-16.8,38.3,-7.2C39.5,2.4,38.4,12,33.3,17.8C28.3,23.7,19.2,25.8,11.7,25.9C4.1,26,-2,24,-9.1,22.5C-16.2,21,-24.4,19.9,-30.5,14.9C-36.5,10,-40.4,1.1,-38.3,-6C-36.2,-13.2,-28.1,-18.5,-20.7,-25.1C-13.4,-31.7,-6.7,-39.6,1.7,-41.6C10.1,-43.7,20.2,-39.9,26.9,-33.2Z" width="100%" height="100%" stroke="0" transform="scale(1.2, 1.3)"></path>
+                                    </svg>
+                                    <i class="bi bi-file-earmark-medical fs-1 d-inline-block position-absolute top-50 translate-middle-y"></i>
+                                </div>
+                                <h3 class="card-title">Sed Perspiciatis</h3>
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card rounded-3 h-100 text-center border-0 pt-5 pb-3 card-3">
+                            <div class="card-body d-flex flex-column gap-3">
+                                <div class="card-icon mb-3 position-relative d-flex align-items-center justify-content-center">
+                                    <svg width="100" height="100" viewBox="-50 -50 100 100" preserveAspectRatio="none" class="p-0">
+                                        <path fill="#F5F5F5" d="M25.4,-26.6C30.8,-20.1,31.3,-10.1,29.7,-1.6C28,6.8,24.2,13.6,18.9,19.5C13.6,25.3,6.8,30.3,-0.8,31.1C-8.4,31.9,-16.8,28.5,-22.9,22.7C-29.1,16.8,-33.1,8.4,-31.4,1.7C-29.7,-5.1,-22.5,-10.1,-16.3,-16.6C-10.1,-23.1,-5.1,-31.1,2.5,-33.6C10.1,-36.1,20.1,-33.1,25.4,-26.6Z" width="100%" height="100%" stroke="0" transform="scale(1.3, 1.5)"></path>
+                                    </svg>
+                                    <i class="bi bi-speedometer2 fs-1 d-inline-block position-absolute top-50 translate-middle-y"></i>
+                                </div>
+                                <h3 class="card-title">Magni Dolores</h3>
+                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card rounded-3 h-100 text-center border-0 pt-5 pb-3 card-4">
+                            <div class="card-body d-flex flex-column gap-3">
+                                <div class="card-icon mb-3 position-relative d-flex align-items-center justify-content-center">
+                                    <svg width="100" height="100" viewBox="-50 -50 100 100" preserveAspectRatio="none" class="p-0">
+                                        <path fill="#F5F5F5" d="M20.8,-30.6C28.1,-27.6,36.1,-23.9,39.1,-17.8C42,-11.6,39.9,-3.1,38,5.1C36.2,13.2,34.7,21,30.5,27.2C26.3,33.4,19.4,38,12,39.7C4.6,41.3,-3.4,40,-11.1,37.8C-18.9,35.6,-26.5,32.6,-31.1,27C-35.6,21.5,-37.2,13.6,-38.7,5.3C-40.2,-2.9,-41.8,-11.3,-39.5,-18.7C-37.1,-26,-30.9,-32.2,-23.7,-35.2C-16.5,-38.3,-8.2,-38.1,-0.8,-36.9C6.7,-35.7,13.4,-33.6,20.8,-30.6Z" width="100%" height="100%" stroke="0" transform="scale(1.1, 1.2)"></path>
+                                    </svg>
+                                    <i class="bi bi-stack fs-1 d-inline-block position-absolute top-50 translate-middle-y"></i>
+                                </div>
+                                <h3 class="card-title">Nemo Enim</h3>
+                                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card rounded-3 h-100 text-center border-0 pt-5 pb-3 card-5">
+                            <div class="card-body d-flex flex-column gap-3">
+                                <div class="card-icon mb-3 position-relative d-flex align-items-center justify-content-center">
+                                    <svg width="100" height="100" viewBox="-50 -50 100 100" preserveAspectRatio="none" class="p-0">
+                                        <path fill="#F5F5F5" d="M16.3,-21.8C19.2,-17,18.2,-10,20.8,-2.6C23.3,4.8,29.4,12.7,27.8,16.6C26.2,20.6,16.8,20.6,8.1,24.9C-0.6,29.2,-8.7,37.8,-14.7,37C-20.6,36.3,-24.4,26.3,-26.2,17.7C-28,9.2,-27.8,2.2,-25.9,-3.8C-23.9,-9.8,-20.1,-14.6,-15.5,-19.1C-10.9,-23.5,-5.5,-27.4,0.6,-28.2C6.7,-28.9,13.5,-26.5,16.3,-21.8Z" width="100%" height="100%" stroke="0" transform="scale(1.3, 1.5)"></path>
+                                    </svg>
+                                    <i class="bi bi-file-earmark-slides fs-1 d-inline-block position-absolute top-50 translate-middle-y"></i>
+                                </div>
+                                <h3 class="card-title">Dele Cardo</h3>
+                                <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card rounded-3 h-100 text-center border-0 pt-5 pb-3 card-6">
+                            <div class="card-body d-flex flex-column gap-3">
+                                <div class="card-icon mb-3 position-relative d-flex align-items-center justify-content-center">
+                                    <svg width="100" height="100" viewBox="-50 -50 100 100" preserveAspectRatio="none" class="p-0">
+                                        <path fill="#F5F5F5" d="M25.3,-28.5C33,-23.7,39.6,-15.9,40.4,-7.7C41.2,0.5,36.1,9.2,30.5,16.3C24.9,23.4,18.7,28.9,11,32.8C3.3,36.8,-5.9,39.2,-13.6,36.7C-21.3,34.2,-27.5,26.8,-32.2,18.6C-36.8,10.4,-39.9,1.4,-38.1,-6.3C-36.2,-14,-29.4,-20.5,-22.2,-25.4C-15.1,-30.2,-7.5,-33.5,0.6,-34.3C8.8,-35.1,17.6,-33.3,25.3,-28.5Z" width="100%" height="100%" stroke="0" transform="scale(1.3, 1.3)"></path>
+                                    </svg>
+                                    <i class="bi bi-binoculars fs-1 d-inline-block position-absolute top-50 translate-middle-y"></i>
+                                </div>
+                                <h3 class="card-title">Divera Don</h3>
+                                <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials -->
+        <section class="p-5 ms-lg-5">
+            <div class="container-lg" data-aos="zoom-in-left">
+                <div class="about text-center mb-5">
+                    <h1 class="mb-4 fw-bold">TESTIMONIALS</h1>
+                    <div class="horizontal mx-auto mb-4"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div id="testimonial-items" class="carousel slide" data-bs-ride="carousel">
+                    <ul class="carousel-indicators position-absolute">
+                        <li type="button" data-bs-target="#testimonial-items" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></li>
+                        <li type="button" data-bs-target="#testimonial-items" data-bs-slide-to="1" aria-label="Slide 2"></li>
+                        <li type="button" data-bs-target="#testimonial-items" data-bs-slide-to="2" aria-label="Slide 3"></li>
+                        <li type="button" data-bs-target="#testimonial-items" data-bs-slide-to="3" aria-label="Slide 4"></li>
+                        <li type="button" data-bs-target="#testimonial-items" data-bs-slide-to="4" aria-label="Slide 5"></li>
+                    </ul>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="card border-0 bg-body-tertiary text-center">
+                                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="" class="card-img-top img-fluid w-25 mx-auto rounded-circle">
+                                <div class="card-body">
+                                    <h2 class="card-title">Saul Goodman</h2>
+                                    <p class="card-text text-muted">CEO & Founder</p>
+                                </div>
+                                <blockquote class="blockquote fw-light fst-italic px-5">
+                                    <i class="fa-solid fa-quote-left text-primary opacity-50"></i>
+                                    <span class="small">Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
+                                    <i class="fa-solid fa-quote-right text-primary opacity-50"></i>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card border-0 bg-body-tertiary text-center">
+                                <img src="https://randomuser.me/api/portraits/women/75.jpg" alt="" class="card-img-top img-fluid w-25 mx-auto rounded-circle">
+                                <div class="card-body">
+                                    <h2 class="card-title">Sara Wilsson</h2>
+                                    <p class="card-text text-muted">Designer</p>
+                                </div>
+                                <blockquote class="blockquote fw-light fst-italic px-5">
+                                    <i class="fa-solid fa-quote-left text-primary opacity-50"></i>
+                                    <span class="small">Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
+                                    <i class="fa-solid fa-quote-right text-primary opacity-50"></i>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card border-0 bg-body-tertiary text-center">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="" class="card-img-top img-fluid w-25 mx-auto rounded-circle">
+                                <div class="card-body">
+                                    <h2 class="card-title">Jena Karlis</h2>
+                                    <p class="card-text text-muted">Store Owner</p>
+                                </div>
+                                <blockquote class="blockquote fw-light fst-italic px-5">
+                                    <i class="fa-solid fa-quote-left text-primary opacity-50"></i>
+                                    <span class="small">Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
+                                    <i class="fa-solid fa-quote-right text-primary opacity-50"></i>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card border-0 bg-body-tertiary text-center">
+                                <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="" class="card-img-top img-fluid w-25 mx-auto rounded-circle">
+                                <div class="card-body">
+                                    <h2 class="card-title">Matt Brandon</h2>
+                                    <p class="card-text text-muted">Freelancer</p>
+                                </div>
+                                <blockquote class="blockquote fw-light fst-italic px-5">
+                                    <i class="fa-solid fa-quote-left text-primary opacity-50"></i>
+                                    <span class="small">Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
+                                    <i class="fa-solid fa-quote-right text-primary opacity-50"></i>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card border-0 bg-body-tertiary text-center">
+                                <img src="https://randomuser.me/api/portraits/men/70.jpg" alt="" class="card-img-top img-fluid w-25 mx-auto rounded-circle">
+                                <div class="card-body">
+                                    <h2 class="card-title">John Larson</h2>
+                                    <p class="card-text text-muted">Entrepreneur</p>
+                                </div>
+                                <blockquote class="blockquote fw-light fst-italic px-5">
+                                    <i class="fa-solid fa-quote-left text-primary opacity-50"></i>
+                                    <span class="small">Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
+                                    <i class="fa-solid fa-quote-right text-primary opacity-50"></i>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact -->
+        <section class="p-5 ms-lg-5" id="contact">
+            <div class="container-lg" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
+                <div class="container-lg">
+                    <div class="about text-center mb-5">
+                        <h1 class="mb-4 fw-bold">CONTACT</h1>
+                        <div class="horizontal mx-auto mb-4"></div>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col-lg-5">
+                        <div class="location mb-5">
+                            <div class="contact-icon d-flex align-items-center justify-content-center">
+                                <i class="bi bi-geo-alt text-primary fs-4"></i>
+                            </div>
+                            <div class="contact-text text-secondary text-start">
+                                <h4>Location:</h4>
+                                <p class="text-opacity-75 m-0">1248/30/7 Huynh Tan Phat, Tan Phu ward, District 7, HCM</p>
+                            </div>
+                        </div>
+                        <div class="email mb-5">
+                            <div class="contact-icon d-flex align-items-center justify-content-center">
+                                <i class="bi bi-envelope text-primary fs-4"></i>
+                            </div>
+                            <div class="contact-text text-secondary">
+                                <h4>Email:</h4>
+                                <p class="text-opacity-75 m-0">hongtufiroct@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="phone mb-5">
+                            <div class="contact-icon d-flex align-items-center justify-content-center">
+                                <i class="bi bi-phone text-primary fs-4"></i>
+                            </div>
+                            <div class="contact-text text-secondary">
+                                <h4 class="">Call:</h4>
+                                <p class="text-opacity-75 m-0">+84 905 682 565</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col lg-7">
+                        <form id="contactForm" action="" class="text-center">
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <input type="text" class="form-control text-secondary bg-body-tertiary fs-5" placeholder="Your Name">
+                                </div>
+                                <div class="col-6">
+                                    <input type="email" class="form-control text-secondary bg-body-tertiary fs-5" placeholder="Your Email">
+                                </div>
+                            </div>
+                            <input type="text" class="form-control text-secondary bg-body-tertiary fs-5 mb-3" placeholder="Subject">
+                            <textarea type="text" class="form-control text-secondary bg-body-tertiary fs-5 mb-3" cols="30" rows="5" placeholder="Message"></textarea>
+                            <button class="btn btn-primary rounded-pill px-4 lead">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- information -->
+        <footer class="ps-5 pt-5 bg-body-secondary">
+            <div class="container-fluid text-center" data-aos="flip-down" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                <h1 class="mb-4 fw-bold">Tú Hồng Lê</h1>
+                <p class="fst-italic small">Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
+                <div class="footerIcons mb-5 pt-4 d-flex gap-2 justify-content-center h4">
+                    <button class="btn btn-primary d-flex justify-content-center align-items-center"><a href=""><i class="fa-brands fa-twitter text-light"></button></i></a></button>
+                    <button class="btn btn-primary d-flex justify-content-center align-items-center"><a href=""><i class="fa-brands fa-facebook-f text-light"></i></a></button>
+                    <button class="btn btn-primary d-flex justify-content-center align-items-center"><a href=""><i class="fa-brands fa-instagram text-light"></i></a></button>
+                    <button class="btn btn-primary d-flex justify-content-center align-items-center"><a href=""><i class="fa-brands fa-skype text-light"></i></a></button>
+                    <button class="btn btn-primary d-flex justify-content-center align-items-center"><a href=""><i class="fa-brands fa-linkedin-in text-light"></i></a></button>
+                </div>
+                <p class="small m-1">&copy; Copyright <b>Tu Hong Le</b>. All Rights Reserved</p>
+                <p class="small fst-italic m-0 pb-2">Designed by <a href="" class="text-decoration-none">Me</a></p>
+            </div>
+        </footer>
+    </m>
+  
+  <!-- Modal -->
+    <div class="modal fade" id="carouselImage" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="carouselImageLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content bg-dark bg-opacity-75 position-relative">
+                <button type="button" class="btn-close bg-secondary p-2 position-absolute top-0 end-0 z-2 fs-4" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body d-flex justify-content-center align-items-center">
+                    <div id="carouselModal" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="https://www.rollingstone.com/wp-content/uploads/2022/06/NY_5-2Clean.jpg?w=1581&h=1054&crop=1" class="d-block w-auto" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://media.vov.vn/sites/default/files/styles/large/public/2022-05/hd-wallpaper-nayeon-twice-nayeon-twice-alcohol-kpop-im-nayeon-twice-taste-of-love-twice-alcohol-taste-of-love.jpeg.jpg" class="d-block w-auto" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://wallpapers.com/images/hd/twice-nayeon-wearing-a-tiara-0jkrktwrq99l3shv.jpg" class="d-block w-auto" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://image.vtc.vn/files/bichdung/2018/11/24/dich-le-nhiet-ba-3-3-1514547.jpg" class="d-block w-auto" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://ttol.vietnamnetjsc.vn/images/2019/09/19/10/56/Dich-Le-Nhiet-Ba-6.jpg" class="d-block w-auto" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://cdn.24h.com.vn/upload/4-2021/images/2021-12-24/dich-Le-Nhiet-Ba-mac-dep-nhat-2021-voi-phuc-trang-khoe-triet-de-voc-dang-nu-than-006qht3ely1gvf2hn0clpj647s5j77wl02-1640314675-826-width1000height1313.jpg" class="d-block w-auto" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://economictimes.indiatimes.com/thumb/msid-96710895,width-1200,height-900,resizemode-4,imgsize-38032/blackpink-jisoo.jpg?from=mdr" class="d-block w-auto" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://kenh14cdn.com/203336854389633024/2023/1/4/photo-6-1672803787646671422206.jpeg" class="d-block w-auto" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://static-images.vnncdn.net/files/publish/2023/2/25/87984313-2586145001666491-2985760121994346496-n-1217.jpeg" class="d-block w-auto" alt="...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev position-absolute" type="button" data-bs-target="#carouselModal" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon bg-dark bg-opacity-25 p-3" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next position-absolute" type="button" data-bs-target="#carouselModal" data-bs-slide="next">
+                  <span class="carousel-control-next-icon bg-dark bg-opacity-25 p-3" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Modal javascript -->
+    <script>
+        const myModal = document.getElementById('myModal')
+        const myInput = document.getElementById('myInput')
+
+        myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})
+    </script>
+
+    <!-- Element to contain animated typing -->
+    <span id="element"></span>
+
+    <!-- Load library from the CDN -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <!-- Setup and start animation! -->
+    <script>
+        var typed = new Typed('#typed', {
+        strings: ['Tú đẹp trai', 'Pharmacist', 'FE&nbsp;Developer', 'Designer'],
+        typeSpeed: 100,
+        loop: true,
+        startDelay: 1000
+        });
+    </script>
+
+    <!-- INITIALIZE AOS - Fade in elements into viewport -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- Bootstrap 5 JS here -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
