@@ -16,8 +16,9 @@ html {
 
 #closeOffCanvas {
     top: 1%;
-    left: 93%;
+    right: 3%;
     display: none;
+    z-index: 9999;
 }
 
 #closeOffCanvas:hover {

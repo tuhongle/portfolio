@@ -4,6 +4,7 @@ const closeButton = document.getElementById("closeOffCanvas");
 function openNavbar() {
     togglerIcon.style.display = "none";
     closeButton.style.display = "block";
+    closeButton.style.zIndex = "5";
 }
 
 function closeNavbar() {
