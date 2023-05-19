@@ -14,3 +14,13 @@ function closeNavbar() {
 
 togglerIcon.onclick = openNavbar;
 closeButton.onclick = closeNavbar;
+
+//? fade out spinner
+
+const spinnerWrapper = document.querySelector(".spinner-wrapper");
+
+window.addEventListener("load", function() {
+    this.setTimeout(() => {
+        spinnerWrapper.classList.add("fade-out-spinner");
+    }, 300)
+});

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap 5 Exercise 3</title>
+    <title>Tú Hồng Le Résume</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> <!-- Fade elements into viewport -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,7 +12,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script defer src="main.js"></script>
 </head>
-<body>
+<body class="overflow-x-hidden border-0">
+    <!-- Spinner loading -->
+    <!-- ====== Causing Scrollspy working not right =========== -->
+    <div class="spinner-wrapper">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light z-1 p-0" id="navbarOffCanvas">
         <div class="container-fluid position-absolute top-0">
@@ -97,7 +104,7 @@
         </section>
           <!-- About -->
         <section class="px-md-5 py-5 ms-lg-5 px-1" id="about">
-            <div class="container-fluid" data-aos="fade-up">
+            <div class="container-lg" data-aos="fade-up">
                 <div class="about text-center mb-4">
                     <h1 class="mb-4 fw-bold">ABOUT</h1>
                     <div class="horizontal mx-auto mb-4"></div>
@@ -105,9 +112,9 @@
                 </div>
                 <div class="row g-5">
                     <div class="col-lg-5 text-center">
-                        <img src="./img/Tre 21446.jpg" alt="logo" class="img-fluid">
+                        <img src="./img/Tre 21446.jpg" alt="logo" class="img-fluid" width="70%">
                     </div>
-                    <div class="col-lg-7">
+                    <div class="col-lg-7 d-flex flex-column gap-3">
                         <h2>UI/UX Designer & Web Developer.</h2>
                         <p class="lead fst-italic">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus velit modi, ullam et ea ducimus hic quia consequuntur pariatur neque.</p>
                         <div class="row">
@@ -131,7 +138,7 @@
         </section>
           <!-- facts -->
         <section class="px-md-5 py-5 ms-lg-5 px-1">
-            <div class="container-fluid" data-aos="fade-left">
+            <div class="container-lg" data-aos="fade-left">
                 <div class="about text-center mb-5">
                     <h1 class="mb-4 fw-bold">FACTS</h1>
                     <div class="horizontal mx-auto mb-4"></div>
@@ -163,7 +170,7 @@
         </section>
           <!-- Skills -->
         <section class="px-md-5 py-5 ms-lg-5 px-1">
-            <div class="container-fluid" data-aos="zoom-in">
+            <div class="container-lg" data-aos="zoom-in">
                 <div class="about text-center mb-5">
                     <h1 class="mb-4 fw-bold">SKILLS</h1>
                     <div class="horizontal mx-auto mb-4"></div>
@@ -301,7 +308,7 @@
         </section>
         <!-- Portfolio -->
         <section class="px-md-5 py-5 ms-lg-5 px-1" id="portfolio">
-            <div class="container-lg" data-aos="fade-up">
+            <div class="container-fluid" data-aos="fade-up">
                 <div class="about text-center mb-5">
                     <h1 class="mb-4 fw-bold">PORTFOLIO</h1>
                     <div class="horizontal mx-auto mb-4"></div>
@@ -325,31 +332,31 @@
                     <div class="tab-content" id="portfolioTabContent">
                         <div class="tab-pane fade show active" id="tab-all" role="tabpanel" aria-labelledby="tab-all-tab">
                                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
-                                    <div class="col mb-3">
+                                    <div class="col mb-3 d-none d-md-block">
                                         <div class="img-contain h-100" type="button" data-bs-toggle="modal" data-bs-target="#carouselImage"><img src="https://www.rollingstone.com/wp-content/uploads/2022/06/NY_5-2Clean.jpg?w=1581&h=1054&crop=1" alt="" class="img-fluid h-100 object-fit-cover rounded-4"></div>
                                     </div>
                                     <div class="col mb-3">
                                         <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain h-100"><img src="https://media.vov.vn/sites/default/files/styles/large/public/2022-05/hd-wallpaper-nayeon-twice-nayeon-twice-alcohol-kpop-im-nayeon-twice-taste-of-love-twice-alcohol-taste-of-love.jpeg.jpg" alt="" class="img-fluid h-100 object-fit-cover rounded-2"></div>
                                     </div>
-                                    <div class="col mb-3">
+                                    <div class="col mb-3 d-none d-md-block">
                                         <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain h-100"><img src="https://wallpapers.com/images/hd/twice-nayeon-wearing-a-tiara-0jkrktwrq99l3shv.jpg" alt="" class="img-fluid h-100 object-fit-cover rounded-2"></div>
                                     </div>
-                                    <div class="col mb-3">
+                                    <div class="col mb-3 d-none d-md-block">
                                         <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain h-100"><img src="https://image.vtc.vn/files/bichdung/2018/11/24/dich-le-nhiet-ba-3-3-1514547.jpg" alt="" class="img-fluid h-100 object-fit-cover rounded-2"></div>
                                     </div>
-                                    <div class="col mb-3">
+                                    <div class="col mb-3 d-none d-md-block">
                                         <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain h-100"><img src="https://ttol.vietnamnetjsc.vn/images/2019/09/19/10/56/Dich-Le-Nhiet-Ba-6.jpg" alt="" class="img-fluid h-100 object-fit-cover rounded-2"></div>
                                     </div>
                                     <div class="col mb-3">
                                         <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain h-100"><img src="https://cdn.24h.com.vn/upload/4-2021/images/2021-12-24/dich-Le-Nhiet-Ba-mac-dep-nhat-2021-voi-phuc-trang-khoe-triet-de-voc-dang-nu-than-006qht3ely1gvf2hn0clpj647s5j77wl02-1640314675-826-width1000height1313.jpg" alt="" class="img-fluid h-100 object-fit-cover rounded-2"></div>
                                     </div>
-                                    <div class="col mb-3">
+                                    <div class="col mb-3 d-none d-md-block">
                                         <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain h-100"><img src="https://economictimes.indiatimes.com/thumb/msid-96710895,width-1200,height-900,resizemode-4,imgsize-38032/blackpink-jisoo.jpg?from=mdr" alt="" class="img-fluid h-100 object-fit-cover rounded-2"></div>
                                     </div>
                                     <div class="col mb-3">
                                         <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain h-100"><img src="https://kenh14cdn.com/203336854389633024/2023/1/4/photo-6-1672803787646671422206.jpeg" alt="" class="img-fluid h-100 object-fit-cover rounded-2"></div>
                                     </div>
-                                    <div class="col mb-3 d-block d-md-none d-lg-block d-xl-none">
+                                    <div class="col mb-3 d-none d-lg-block d-xl-none">
                                         <div type="button" data-bs-toggle="modal" data-bs-target="#carouselImage" class="img-contain h-100"><img src="https://static-images.vnncdn.net/files/publish/2023/2/25/87984313-2586145001666491-2985760121994346496-n-1217.jpeg" alt="" class="img-fluid h-100 object-fit-cover rounded-2"></div>
                                     </div>
                                 </div>
@@ -491,13 +498,13 @@
         </section>
         <!-- Testimonials -->
         <section class="px-md-5 py-5 ms-lg-5 px-1">
-            <div class="container-lg" data-aos="zoom-in-left">
+            <div class="container-lg" data-aos="zoom-in-up">
                 <div class="about text-center mb-5">
                     <h1 class="mb-4 fw-bold">TESTIMONIALS</h1>
                     <div class="horizontal mx-auto mb-4"></div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" data-aos="zoom-in-up">
                 <div id="testimonial-items" class="carousel slide" data-bs-ride="carousel">
                     <ul class="carousel-indicators position-absolute">
                         <li type="button" data-bs-target="#testimonial-items" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></li>
